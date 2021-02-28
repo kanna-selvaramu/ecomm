@@ -36,4 +36,8 @@
 		top: 20px;
 		right: 25px;
 	}
+
+	.cls_ProductFilterWrapper select {
+		width: 100%;
+	}
 }

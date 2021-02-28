@@ -1,4 +1,5 @@
 import React, {  } from "react";
+import StarRatings from 'react-star-ratings';
 
 export default function ProductCard  ({detail}) {
     
@@ -14,6 +15,13 @@ export default function ProductCard  ({detail}) {
                 <div className="cls_ProdDescription">
                     {detail.description}
                 </div>
+                <StarRatings
+                    rating={detail.rating}
+                    starDimension="20px"
+                    starSpacing="2px"
+                    starRatedColor="#478ac9"
+                    starEmptyColor="#badeff"
+                />
                 <div className="cls_ProdPrice">
                     {detail.price}
                     <span className="cls_ProdOldPrice"> {detail.old_price}</span>

@@ -46,6 +46,14 @@
 	line-height: 50px;
 }
 
+.cls_ProductFilterWrapper select {
+	padding: 20px;
+	width: 130px;
+	border-color: #adadad;
+	border-radius: 2px;
+	margin: 20px 0px;
+}
+
 /** components css **/
 
 .cls_InputBox {
@@ -85,6 +93,7 @@
 .cls_ProductCont {
 	display: inline-block;
 	padding: 20px 15px;
+	cursor: pointer;
 }
 
 .cls_Title {
