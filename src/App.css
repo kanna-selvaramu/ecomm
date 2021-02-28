@@ -1,0 +1,115 @@
+#root,
+.App {
+	height: 100vh;
+}
+
+/* pages css */
+
+.cls_SignInWrapper,
+.cls_SignUpWrapper {
+	height: 100%;
+	background-color: #1732a4;
+	position: relative;
+}
+
+.cls_SignInBox,
+.cls_SignUpBox {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: 50%;
+	height: 50%;
+	overflow: auto;
+	padding: 15px;
+	margin: auto;
+	background-color: #fff;
+	border-radius: 20px;
+}
+
+.cls_SignInFormWrapper,
+.cls_SignUpFormWrapper {
+	margin-top: 25px;
+}
+
+.cls_PageTitle {
+	font-weight: bolder;
+	font-size: 22px;
+}
+
+/** components css **/
+
+.cls_InputBox {
+	width: 100%;
+	height: 50px;
+	margin-bottom: 20px;
+	box-sizing: border-box;
+	border: 0px;
+	padding: 20px;
+	background-color: #f3eeee;
+}
+
+.cls_SubmitBtn {
+	width: 100%;
+	-webkit-appearance: none;
+	height: 50px;
+	border: 0;
+	color: #fff;
+	border-radius: 9px;
+	background-color: #2dca73;
+	cursor: pointer;
+	font-size: 16px;
+	text-transform: uppercase;
+}
+
+.cls_ProductsWrapper {
+	padding: 20px 0px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.cls_ProdImgCont img {
+	width: 300px;
+	height: 250px;
+}
+
+.cls_ProductCont {
+	display: inline-block;
+	padding: 20px 15px;
+}
+
+.cls_Title {
+	text-align: center;
+	font-size: 22px;
+}
+
+.cls_BodyWrapper {
+	margin: 20px;
+}
+
+.cls_ProdName {
+	font-weight: bold;
+}
+
+.cls_ProdDesc {
+	padding: 10px 0px;
+}
+
+.cls_ProdPrice {
+	color: #b12704;
+}
+
+span.cls_ProdOldPrice {
+	text-decoration: line-through;
+	color: #565959;
+	font-size: 11px;
+	padding-left: 5px;
+}
+
+.cls_ProdDescription {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	width: 300px;
+}
