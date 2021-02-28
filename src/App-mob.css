@@ -1,4 +1,8 @@
 @media only screen and (max-width: 549px) {
+	#root,
+	.App {
+		height: auto;
+	}
 	.cls_SignInBox {
 		width: auto;
 		height: auto;

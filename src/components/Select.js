@@ -1,10 +1,10 @@
 import React , {  } from "react";
 
-export default function Select ({defVal , options, selectValue, handleChange}) {
+export default function Select ({defVal , options, selectedValue, handleChange}) {
     
     return (
         <select className = "cls_SelectWrapper"
-            value={selectValue} 
+            value={selectedValue} 
             onChange={(e) => handleChange(e)} 
         >
             <option value={defVal}>{defVal}</option>
