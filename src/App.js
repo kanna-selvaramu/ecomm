@@ -15,7 +15,7 @@ if (!firebase.apps.length) {
 }
 
 function App() {
-  const [ user, setUser ] = useState(null);
+  const [ user, setUser ] = useState(localStorage.getItem("user"));
   return (
     <div className="App">
       <UserContext.Provider value = {{ user, setUser }}>
