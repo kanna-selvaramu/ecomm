@@ -5,8 +5,35 @@
 		margin: 20px;
 		position: unset;
 	}
+
 	.cls_SignInWrapper {
 		background-color: #fff;
 		height: auto;
+	}
+
+	.cls_Header {
+		display: block;
+		position: relative;
+	}
+
+	input.cls_SearchCont {
+		width: 90%;
+		margin: 10px 0px;
+	}
+
+	.cls_LogoHolder {
+		display: inline-block;
+	}
+
+	.cls_LogoutWrapper {
+		position: absolute;
+		top: 20px;
+		right: 60px;
+	}
+
+	.cls_CartWrapper {
+		position: absolute;
+		top: 20px;
+		right: 25px;
 	}
 }

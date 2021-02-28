@@ -38,6 +38,14 @@
 	font-size: 22px;
 }
 
+.addToCartBtn {
+	color: #fff;
+	background-color: #478ac9;
+	border-radius: 5px;
+	height: 50px;
+	line-height: 50px;
+}
+
 /** components css **/
 
 .cls_InputBox {
@@ -97,7 +105,7 @@
 }
 
 .cls_ProdPrice {
-	color: #b12704;
+	color: #478ac9;
 }
 
 span.cls_ProdOldPrice {
@@ -112,4 +120,40 @@ span.cls_ProdOldPrice {
 	overflow: hidden;
 	white-space: nowrap;
 	width: 300px;
+}
+
+.cls_Header {
+	background-color: #478ac9;
+	color: #fff;
+	padding: 20px;
+	display: flex;
+	vertical-align: middle;
+}
+
+.cls_cartIcon {
+	width: 24px;
+	background-image: url("https://img.icons8.com/fluent-systems-regular/24/ffffff/fast-cart.png");
+	height: 24px;
+	text-align: right;
+}
+
+.cls_CartWrapper {
+	margin-left: 20px;
+	cursor: pointer;
+}
+
+.cls_LogoutWrapper {
+	cursor: pointer;
+}
+
+.cls_SearchWrapper {
+	flex: 1;
+	text-align: center;
+}
+
+input.cls_SearchCont {
+	padding: 5px 20px;
+	width: 200px;
+	border: 0px;
+	border-radius: 2px;
 }
