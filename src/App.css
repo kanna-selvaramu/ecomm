@@ -1,6 +1,6 @@
 #root,
 .App {
-	height: 100vh;
+	height: 100%;
 }
 
 /* pages css */
@@ -38,7 +38,8 @@
 	font-size: 22px;
 }
 
-.addToCartBtn {
+.addToCartBtn,
+.pdp_addToCartBtn {
 	color: #fff;
 	background-color: #478ac9;
 	border-radius: 5px;
@@ -52,6 +53,61 @@
 	border-color: #adadad;
 	border-radius: 2px;
 	margin: 20px 0px;
+}
+
+.cls_pdpWrapper {
+	margin: 0 auto;
+}
+
+.cls_pdpHeaderWrapper {
+	display: flex;
+	margin-bottom: 20px;
+}
+
+.cls_pdptitle {
+	flex: 1;
+	text-align: center;
+}
+
+.cls_pdpBack {
+	cursor: pointer;
+	color: #478ac9;
+}
+
+.cls_pdpImgWrap {
+	text-align: center;
+	flex: 0.5;
+}
+
+.cls_pdpImgWrap img {
+	max-width: 300px;
+	/* align-content: inherit; */
+}
+
+.cls_pdpBodyWrapper {
+	display: flex;
+}
+
+.cls_pdpDetailWrap {
+	flex: 0.5;
+}
+
+.cls_pdpName {
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+
+.cls_pdpDescription {
+	margin-bottom: 20px;
+}
+
+.cls_pdpDetailWrap .cls_ProdPrice {
+	margin: 5px 0px;
+}
+
+.pdp_addToCartBtn {
+	text-align: center;
+	width: 200px;
 }
 
 /** components css **/

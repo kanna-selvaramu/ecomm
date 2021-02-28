@@ -40,4 +40,28 @@
 	.cls_ProductFilterWrapper select {
 		width: 100%;
 	}
+
+	.cls_pdpBodyWrapper {
+		display: block;
+		margin: 30px 0px;
+	}
+
+	.cls_pdpImgWrap {
+		margin-bottom: 20px;
+	}
+
+	.cls_pdpName {
+		text-align: center;
+	}
+
+	.cls_pdpDetailWrap {
+		text-align: center;
+	}
+
+	.pdp_addToCartBtn {
+		display: block;
+		margin: 0 auto;
+		width: 100%;
+		margin-bottom: 20px;
+	}
 }

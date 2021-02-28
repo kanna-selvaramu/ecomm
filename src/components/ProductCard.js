@@ -1,10 +1,10 @@
 import React, {  } from "react";
 import StarRatings from 'react-star-ratings';
 
-export default function ProductCard  ({detail}) {
+export default function ProductCard  ({onProductClick, detail}) {
     
     return (
-        <div className="cls_ProductCont">
+        <div className="cls_ProductCont" onClick = { onProductClick }>
             <div className="cls_ProdImgCont">
                 <img src = {detail.image_url} />
             </div>
