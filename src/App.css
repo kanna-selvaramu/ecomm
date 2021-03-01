@@ -121,6 +121,88 @@
 	width: 200px;
 }
 
+.cls_CartBodyWrapper {
+	margin: 20px;
+	background-color: #f1f1f1;
+	border-radius: 5px;
+	padding: 20px;
+}
+
+.cls_BackHome {
+	text-align: left;
+}
+
+.cls_CartProdCont {
+	display: flex;
+	margin: 20px 0px;
+	padding-bottom: 20px;
+	border-bottom: solid 1px #acacac;
+}
+
+.cls_CartProdImage {
+	margin-right: 30px;
+}
+
+.cls_CartProdImage img {
+	max-width: 200px;
+}
+
+.cls_CartDesc {
+	display: flex;
+}
+
+.cls_cartProdName {
+	flex: 0.8;
+	font-weight: bold;
+}
+
+.cls_CartProdDetailCont {
+	flex: 1;
+}
+
+.cls_cartProdPrice {
+	color: #acacac;
+	font-weight: bold;
+	padding-right: 10px;
+}
+
+.cls_cartProdQty {
+	border: solid 1px;
+	padding: 3px 5px;
+	width: 30px;
+	height: 17px;
+	font-size: 14px;
+	text-align: right;
+	margin-right: 15px;
+}
+
+.cls_cartProdPriceTotal {
+	font-weight: bold;
+}
+
+.cls_cartRemove {
+	color: #478ac9;
+	width: 200px;
+	margin: 20px 0px;
+	cursor: pointer;
+}
+
+.cls_CartTotal {
+	text-align: center;
+	font-weight: bold;
+}
+
+.cls_CartEmptyMessage {
+	text-align: center;
+	font-size: 22px;
+	margin-bottom: 50px;
+}
+
+.cls_cartPriceWrapper {
+	display: flex;
+	flex: 0.2;
+}
+
 /** components css **/
 
 .cls_InputBox {

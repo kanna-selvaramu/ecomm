@@ -63,19 +63,20 @@ function ProductList() {
             }
         })
         // let atcQty = 0;
-        if(inCartProd === undefined) {
-            const arr = {...item , "atcQty" : 1};
-            localStorage.setItem('cartData' , JSON.stringify([...data, arr]));
-        }
-        else {
-            localStorage.setItem('cartData' , JSON.stringify(data));
-        }
         if(noStock === true) 
             alert("No Stock");
-        else 
+        else {
+            if(inCartProd === undefined) {
+                const arr = {...item , "atcQty" : 1};
+                localStorage.setItem('cartData' , JSON.stringify([...data, arr]));
+            }
+            else {
+                localStorage.setItem('cartData' , JSON.stringify(data));
+            }
             dispatch({
                 type: ADD_TO_CART
             });
+        }
     }
 
     useEffect(() => {

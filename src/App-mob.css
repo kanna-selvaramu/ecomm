@@ -3,14 +3,16 @@
 	.App {
 		height: auto;
 	}
-	.cls_SignInBox {
+	.cls_SignInBox,
+	.cls_SignUpBox {
 		width: auto;
 		height: auto;
 		margin: 20px;
 		position: unset;
 	}
 
-	.cls_SignInWrapper {
+	.cls_SignInWrapper,
+	.cls_SignUpWrapper {
 		background-color: #fff;
 		height: auto;
 	}
@@ -67,5 +69,44 @@
 		margin: 0 auto;
 		width: 100%;
 		margin-bottom: 20px;
+	}
+
+	.cls_CartBodyWrapper {
+		margin: 10px;
+		padding: 10px;
+	}
+
+	.cls_CartBodyWrapper .cls_BodyWrapper {
+		margin: 0px;
+	}
+
+	.cls_Title {
+		font-size: 18px;
+		margin: 10px;
+	}
+
+	.cls_CartProdImage {
+		margin-right: 10px;
+	}
+
+	.cls_CartProdImage img {
+		max-width: 150px;
+	}
+
+	.cls_CartProdDetailCont {
+		font-size: 14px;
+	}
+
+	.cls_cartPriceWrapper {
+		display: flex;
+		margin: 10px 0px;
+	}
+
+	.cls_CartDesc {
+		display: block;
+	}
+
+	.cls_cartProdQty {
+		text-align: center;
 	}
 }

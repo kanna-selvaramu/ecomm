@@ -10,6 +10,7 @@ import { UserContext } from "./context/UserContext";
 import SignIn from './pages/SignIn';
 import ProductList from './pages/ProductList';
 import { cartReducer } from './context/reducer';
+import Cart from './pages/Cart';
 
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
@@ -31,6 +32,7 @@ function App() {
           <Switch>
             <Route path = "/" exact> <SignIn /> </Route>
             <Route path = "/allproducts" exact> <ProductList /> </Route>
+            <Route path = "/cart" exact> <Cart /> </Route>
           </Switch>
         </Router>
       </UserContext.Provider>

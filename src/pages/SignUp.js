@@ -22,6 +22,10 @@ function SignUp ({onLoginViewPress}) {
             setUser(true);
         })
         .catch(error => {
+            if(error.code && error.code === "auth/email-already-in-use")
+            {
+                alert("Email address already in use.");
+            }
             console.log(error);
         });
     }

@@ -30,9 +30,6 @@ export default function ProductDescription({detail, onBackPress}) {
                     <div className="cls_pdpDescription">
                         {detail.description}
                     </div>
-                    <div className="pdp_addToCartBtn">
-                        Add to Cart
-                    </div>
                 </div>
             </div>
         </div>

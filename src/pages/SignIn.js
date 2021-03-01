@@ -24,6 +24,10 @@ function SignIn () {
             setUser(true);
         })
         .catch(error => {
+            if(error.code && error.code === "auth/user-not-found")
+            {
+                alert("No such user found");
+            }
             console.log(error);
         });
     }
