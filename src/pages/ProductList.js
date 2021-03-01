@@ -6,6 +6,7 @@ import { Redirect } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
 import Select from "../components/Select";
 import ProductDescription from "./ProductDescription";
+import { ADD_TO_CART } from "../context/action.type";
 
 const localurl = "https://api.jsonbin.io/b/601a68315415b40ac22273cc/2";
 
@@ -17,7 +18,7 @@ function ProductList() {
     const [filterProducts , setFilterProducts] = useState([]);
     const [pdp, setPdp] = useState({});
 
-    const { user , setUser } = useContext(UserContext);
+    const { user , setUser, cart_count , dispatch } = useContext(UserContext);
     const fetchData = async () => {
         const { data } = await axios.get(localurl, {});
         console.log("photos", data); 
@@ -28,7 +29,6 @@ function ProductList() {
         })
         setProducts(data);
         setCategory(arr);
-        
     }
 
     const onFilterSelect = (event) => {
@@ -44,6 +44,38 @@ function ProductList() {
     const onBackPress = () => {
         setPdpView(false);
         setPdp({});
+    }
+  
+    const addToCart = (item) => {
+        const data = localStorage.getItem('cartData') !== null ? JSON.parse(localStorage.getItem('cartData')) : [];
+        let noStock = false;
+        let inCartProd = data.find( eachProd => {
+            if(eachProd.id === item.id) {
+                if(eachProd.stock_availiblity === eachProd.atcQty)
+                {
+                    noStock = true;
+                    return;
+                }
+                else {
+                    eachProd.atcQty++;
+                    return eachProd;
+                }
+            }
+        })
+        // let atcQty = 0;
+        if(inCartProd === undefined) {
+            const arr = {...item , "atcQty" : 1};
+            localStorage.setItem('cartData' , JSON.stringify([...data, arr]));
+        }
+        else {
+            localStorage.setItem('cartData' , JSON.stringify(data));
+        }
+        if(noStock === true) 
+            alert("No Stock");
+        else 
+            dispatch({
+                type: ADD_TO_CART
+            });
     }
 
     useEffect(() => {
@@ -83,11 +115,11 @@ function ProductList() {
                                 {
                                     filter === "All" ?
                                     products.map(item => (
-                                        <ProductCard detail = {item} key = {item.id} onProductClick = {() => onProductClick(item)} />
+                                        <ProductCard detail = {item} key = {item.id} onProductClick = {() => onProductClick(item)} addToCartClick = {() => addToCart(item)}/>
                                     ))
                                     : 
                                     filterProducts.map(item =>(
-                                        <ProductCard detail = {item} key = {item.id} onProductClick = {() => onProductClick(item)} />
+                                        <ProductCard detail = {item} key = {item.id} onProductClick = {() => onProductClick(item)} addToCartClick = {() => addToCart(item)}/>
                                     ))
                                 }
                             </div>

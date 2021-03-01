@@ -211,6 +211,19 @@ span.cls_ProdOldPrice {
 	background-image: url("https://img.icons8.com/fluent-systems-regular/24/ffffff/fast-cart.png");
 	height: 24px;
 	text-align: right;
+	position: relative;
+}
+
+.cls_cartIcon span {
+	position: absolute;
+	bottom: 12px;
+	background-color: yellow;
+	border-radius: 100px;
+	width: 15px;
+	right: -8px;
+	color: #000;
+	font-size: 12px;
+	text-align: center;
 }
 
 .cls_CartWrapper {

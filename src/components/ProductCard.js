@@ -1,14 +1,14 @@
 import React, {  } from "react";
 import StarRatings from 'react-star-ratings';
 
-export default function ProductCard  ({onProductClick, detail}) {
+export default function ProductCard  ({onProductClick, detail, addToCartClick}) {
     
     return (
-        <div className="cls_ProductCont" onClick = { onProductClick }>
+        <div className="cls_ProductCont" >
             <div className="cls_ProdImgCont">
                 <img src = {detail.image_url} />
             </div>
-            <div className="cls_ProdDesc">
+            <div className="cls_ProdDesc" onClick = { onProductClick }>
                 <div className="cls_ProdName">
                     {detail.name}
                 </div>
@@ -27,7 +27,7 @@ export default function ProductCard  ({onProductClick, detail}) {
                     <span className="cls_ProdOldPrice"> {detail.old_price}</span>
                 </div>
             </div>
-            <div className="addToCartBtn">
+            <div className="addToCartBtn" onClick = {addToCartClick}>
                 Add to Cart
             </div>
         </div>

@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { UserContext } from "../context/UserContext";
 
 export default function Header() {
-    const { user , setUser } = useContext(UserContext);
+    const { user , setUser , cart_count} = useContext(UserContext);
     const onLogoutClick = () => {
         setUser(null);
     }
@@ -17,7 +17,9 @@ export default function Header() {
                 Logout
             </div>
             <div className = "cls_CartWrapper">
-                <div className = "cls_cartIcon"></div>
+                <div className = "cls_cartIcon">
+                    <span> {cart_count} </span>
+                </div>
             </div>
         </div>
     )
