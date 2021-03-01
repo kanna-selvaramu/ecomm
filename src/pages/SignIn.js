@@ -4,10 +4,12 @@ import InputBox from "../components/Input";
 import firebase from "firebase/app";
 import { UserContext } from "../context/UserContext";
 import { Redirect } from "react-router-dom";
+import SignUp from "./SignUp";
 
 function SignIn () {
     const [ email, setEmail ] = useState("");
     const [ pwd, setPassword ] = useState("");
+    const [ signUpView, setSignUpView ] = useState(false);
     const { user , setUser } = useContext(UserContext);
 
     const onLoginClick = () => {
@@ -31,6 +33,7 @@ function SignIn () {
     else 
     {
         return (
+            signUpView === false ? 
             <div className = "cls_SignInWrapper">
                 <div className = "cls_SignInBox">
                     <div className = "cls_PageTitle">Log In</div>
@@ -39,8 +42,14 @@ function SignIn () {
                         <InputBox type = "password" value = {pwd} placeholder = "Password" handleChange = {(value) => setPassword(value)} />
                         <Button value = "Login" onBtnClick = {() => onLoginClick()} />
                     </div>
+                    <div className = "cls_SignUpTextCont" onClick = {() => setSignUpView(true)}>
+                        Not a member yet! Click here to <span>Sign Up</span>
+                    </div>
                 </div>
             </div>
+            : 
+            <SignUp onLoginViewPress = {() => setSignUpView(false)}/>
+
         )
     }
 }

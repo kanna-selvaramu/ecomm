@@ -12,6 +12,17 @@
 	position: relative;
 }
 
+.cls_SignUpTextCont,
+.cls_SignInTextCont {
+	margin-top: 30px;
+	cursor: pointer;
+}
+
+.cls_SignUpTextCont span,
+.cls_SignInTextCont span {
+	color: #1732a4;
+}
+
 .cls_SignInBox,
 .cls_SignUpBox {
 	position: absolute;

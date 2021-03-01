@@ -23,7 +23,6 @@ function ProductList() {
         console.log("photos", data); 
         let arr = []; 
         data.map( item => {
-            console.log("test", arr.indexOf(item.category) )
             if(arr.indexOf(item.category) == -1) 
                 arr.push(item.category)
         })
