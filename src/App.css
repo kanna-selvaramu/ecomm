@@ -4,6 +4,10 @@
 }
 
 /* pages css */
+.cls_errorMessageWrapper {
+	padding-bottom: 20px;
+	color: red;
+}
 
 .cls_SignInWrapper,
 .cls_SignUpWrapper {

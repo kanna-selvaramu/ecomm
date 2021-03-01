@@ -8,10 +8,12 @@ import { Redirect } from "react-router-dom";
 function SignUp ({onLoginViewPress}) {
     const [ email, setEmail ] = useState("");
     const [ pwd, setPassword ] = useState("");
+    const [ errorMessage , setErrorMessage] = useState("");
     const { user , setUser } = useContext(UserContext);
 
     const onSignUpClick = () => {
         console.log("onSignUpClick");
+        setErrorMessage("");
         firebase
         .auth()
         .createUserWithEmailAndPassword(email, pwd)
@@ -22,10 +24,7 @@ function SignUp ({onLoginViewPress}) {
             setUser(true);
         })
         .catch(error => {
-            if(error.code && error.code === "auth/email-already-in-use")
-            {
-                alert("Email address already in use.");
-            }
+            error.message && setErrorMessage(error.message);
             console.log(error);
         });
     }
@@ -36,6 +35,12 @@ function SignUp ({onLoginViewPress}) {
                 <div className = "cls_SignUpFormWrapper">
                     <InputBox type = "text" value = {email} placeholder = "Email Address" handleChange = {(value) => setEmail(value)} />
                     <InputBox type = "password" value = {pwd} placeholder = "Password" handleChange = {(value) => setPassword(value)} />
+                    {   
+                        errorMessage !== "" && 
+                        <div className = "cls_errorMessageWrapper">
+                            {errorMessage}
+                        </div>
+                    }
                     <Button value = "Submit" onBtnClick = {() => onSignUpClick()} />
                 </div>
                 <div className = "cls_SignInTextCont" onClick = {onLoginViewPress}>

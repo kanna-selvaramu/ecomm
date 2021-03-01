@@ -9,11 +9,13 @@ import SignUp from "./SignUp";
 function SignIn () {
     const [ email, setEmail ] = useState("");
     const [ pwd, setPassword ] = useState("");
+    const [ errorMessage , setErrorMessage] = useState("");
     const [ signUpView, setSignUpView ] = useState(false);
     const { user , setUser } = useContext(UserContext);
 
     const onLoginClick = () => {
         console.log("onLoginClick");
+        setErrorMessage("");
         firebase
         .auth()
         .signInWithEmailAndPassword(email, pwd)
@@ -24,10 +26,7 @@ function SignIn () {
             setUser(true);
         })
         .catch(error => {
-            if(error.code && error.code === "auth/user-not-found")
-            {
-                alert("No such user found");
-            }
+            error.message && setErrorMessage(error.message);
             console.log(error);
         });
     }
@@ -44,6 +43,12 @@ function SignIn () {
                     <div className = "cls_SignInFormWrapper">
                         <InputBox type = "text" value = {email} placeholder = "Email Address" handleChange = {(value) => setEmail(value)} />
                         <InputBox type = "password" value = {pwd} placeholder = "Password" handleChange = {(value) => setPassword(value)} />
+                        {   
+                            errorMessage !== "" && 
+                            <div className = "cls_errorMessageWrapper">
+                                {errorMessage}
+                            </div>
+                        }
                         <Button value = "Login" onBtnClick = {() => onLoginClick()} />
                     </div>
                     <div className = "cls_SignUpTextCont" onClick = {() => setSignUpView(true)}>
