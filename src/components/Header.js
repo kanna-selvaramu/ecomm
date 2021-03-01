@@ -1,11 +1,17 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { RESET_CART } from "../context/action.type";
 import { UserContext } from "../context/UserContext";
 
 export default function Header() {
-    const { user , setUser , cart_count} = useContext(UserContext);
+    const { user , setUser , cart_count, dispatch} = useContext(UserContext);
     const onLogoutClick = () => {
         setUser(null);
+        dispatch({
+            type: RESET_CART
+        });
+        localStorage.removeItem("user");
+        localStorage.removeItem("cartData");
     }
     return(
         <div className = "cls_Header">
